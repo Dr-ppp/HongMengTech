@@ -1,0 +1,5 @@
+gt.tooltip.multiblock.aheatexchanger.1=3x3 环状热吸收装置，中心放置一致密艾德曼合金壁板
+gt.tooltip.multiblock.aheatexchanger.2=3x3 环状致密艾德曼合金壁板，中心放置主方块
+gt.tooltip.multiblock.aheatexchanger.3=热输出由顶层的8个热吸收装置均分
+gt.tooltip.multiblock.aheatexchanger.4=底层输入，仅能在主方块处输出流体             
+gt.multitileentity.17200=艾德曼合金大型热交换器
