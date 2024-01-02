@@ -1,5 +1,18 @@
 gt.tooltip.multiblock.aheatexchanger.1=3x3 环状热吸收装置，中心放置一致密艾德曼合金壁板
 gt.tooltip.multiblock.aheatexchanger.2=3x3 环状致密艾德曼合金壁板，中心放置主方块
 gt.tooltip.multiblock.aheatexchanger.3=热输出由顶层的8个热吸收装置均分
-gt.tooltip.multiblock.aheatexchanger.4=底层输入，仅能在主方块处输出流体             
+gt.tooltip.multiblock.aheatexchanger.4=底层输入，仅能在主方块处输出流体
+
+gt.tooltip.multiblock.largeaccumulator.1=3x3x2 大型蓄电器组件
+gt.tooltip.multiblock.largeaccumulator.2=主块放置在侧面底部中心，面向外
+gt.tooltip.multiblock.largeaccumulator.3=顶部输入能量，底部输出能量
+
+gt.tooltip.multiblock.roastingoven.1=最底层是 3x3 的殷钢壁板
+gt.tooltip.multiblock.roastingoven.2=第二层是 3x3 中空的8块大型镍铬合金线圈
+gt.tooltip.multiblock.roastingoven.3=第三层是 3x3 的殷钢壁板
+gt.tooltip.multiblock.roastingoven.4=主方块放在侧面底层的中心, 正面朝外
+gt.tooltip.multiblock.roastingoven.5=线圈不接收任何输入输出
+
 gt.multitileentity.17200=艾德曼合金大型热交换器
+gt.multitileentity.18109=大型蓄电器组件
+gt.multitileentity.18111=大型电力焙烧炉

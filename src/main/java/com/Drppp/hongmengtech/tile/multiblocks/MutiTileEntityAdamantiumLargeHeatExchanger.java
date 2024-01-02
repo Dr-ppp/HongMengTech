@@ -267,54 +267,14 @@ public class MutiTileEntityAdamantiumLargeHeatExchanger extends TileEntityBase10
             if (mEnergy >= 8) {
                 long tTransferred = Math.min(mRate / 8, mEnergy / 8);
                 mEnergy -= tTransferred * 8;
-                ITileEntityEnergy.Util.insertEnergyInto(
-                    mEnergyTypeEmitted,
-                    1,
-                    tTransferred,
-                    this,
-                    WD.te(worldObj, xCoord, yCoord + 2, zCoord - 1, SIDE_BOTTOM, T));
-                ITileEntityEnergy.Util.insertEnergyInto(
-                    mEnergyTypeEmitted,
-                    1,
-                    tTransferred,
-                    this,
-                    WD.te(worldObj, xCoord - 1, yCoord + 2, zCoord, SIDE_BOTTOM, T));
-                ITileEntityEnergy.Util.insertEnergyInto(
-                    mEnergyTypeEmitted,
-                    1,
-                    tTransferred,
-                    this,
-                    WD.te(worldObj, xCoord, yCoord + 2, zCoord + 1, SIDE_BOTTOM, T));
-                ITileEntityEnergy.Util.insertEnergyInto(
-                    mEnergyTypeEmitted,
-                    1,
-                    tTransferred,
-                    this,
-                    WD.te(worldObj, xCoord + 1, yCoord + 2, zCoord, SIDE_BOTTOM, T));
-                ITileEntityEnergy.Util.insertEnergyInto(
-                    mEnergyTypeEmitted,
-                    1,
-                    tTransferred,
-                    this,
-                    WD.te(worldObj, xCoord + 1, yCoord + 2, zCoord - 1, SIDE_BOTTOM, T));
-                ITileEntityEnergy.Util.insertEnergyInto(
-                    mEnergyTypeEmitted,
-                    1,
-                    tTransferred,
-                    this,
-                    WD.te(worldObj, xCoord - 1, yCoord + 2, zCoord - 1, SIDE_BOTTOM, T));
-                ITileEntityEnergy.Util.insertEnergyInto(
-                    mEnergyTypeEmitted,
-                    1,
-                    tTransferred,
-                    this,
-                    WD.te(worldObj, xCoord - 1, yCoord + 2, zCoord + 1, SIDE_BOTTOM, T));
-                ITileEntityEnergy.Util.insertEnergyInto(
-                    mEnergyTypeEmitted,
-                    1,
-                    tTransferred,
-                    this,
-                    WD.te(worldObj, xCoord + 1, yCoord + 2, zCoord + 1, SIDE_BOTTOM, T));
+                ITileEntityEnergy.Util.insertEnergyInto(mEnergyTypeEmitted, 1, tTransferred, this, WD.te(worldObj, xCoord, yCoord + 2, zCoord - 1, SIDE_BOTTOM, T));
+                ITileEntityEnergy.Util.insertEnergyInto(mEnergyTypeEmitted, 1, tTransferred, this, WD.te(worldObj, xCoord - 1, yCoord + 2, zCoord, SIDE_BOTTOM, T));
+                ITileEntityEnergy.Util.insertEnergyInto(mEnergyTypeEmitted, 1, tTransferred, this, WD.te(worldObj, xCoord, yCoord + 2, zCoord + 1, SIDE_BOTTOM, T));
+                ITileEntityEnergy.Util.insertEnergyInto(mEnergyTypeEmitted, 1, tTransferred, this, WD.te(worldObj, xCoord + 1, yCoord + 2, zCoord, SIDE_BOTTOM, T));
+                ITileEntityEnergy.Util.insertEnergyInto(mEnergyTypeEmitted, 1, tTransferred, this, WD.te(worldObj, xCoord + 1, yCoord + 2, zCoord - 1, SIDE_BOTTOM, T));
+                ITileEntityEnergy.Util.insertEnergyInto(mEnergyTypeEmitted, 1, tTransferred, this, WD.te(worldObj, xCoord - 1, yCoord + 2, zCoord - 1, SIDE_BOTTOM, T));
+                ITileEntityEnergy.Util.insertEnergyInto(mEnergyTypeEmitted, 1, tTransferred, this, WD.te(worldObj, xCoord - 1, yCoord + 2, zCoord + 1, SIDE_BOTTOM, T));
+                ITileEntityEnergy.Util.insertEnergyInto(mEnergyTypeEmitted, 1, tTransferred, this, WD.te(worldObj, xCoord + 1, yCoord + 2, zCoord + 1, SIDE_BOTTOM, T));
             }
             // Check if it needs to use more Fuel, or if the buffered Energy is enough.
             if (mEnergy < mRate * 2) {
@@ -333,18 +293,19 @@ public class MutiTileEntityAdamantiumLargeHeatExchanger extends TileEntityBase10
                                 mEnergy += UT.Code.units(tRecipe.getAbsoluteTotalPower(), 10000, mEfficiency, F);
                                 if (tRecipe.mFluidOutputs.length > 0) mTanks[1].fill(tRecipe.mFluidOutputs[0]);
                                 // Use as much as needed to keep up the Power per Tick.
-                                while (mEnergy < mRate * 2
-                                    && (tRecipe.mFluidOutputs.length <= 0
-                                        || mTanks[1].canFillAll(tRecipe.mFluidOutputs[0]))
-                                    && tRecipe.isRecipeInputEqual(T, F, mTanks[0].AS_ARRAY, ZL_IS)) {
+                                while (mEnergy < mRate * 2 && (tRecipe.mFluidOutputs.length <= 0 || mTanks[1].canFillAll(tRecipe.mFluidOutputs[0])) && tRecipe.isRecipeInputEqual(T, F, mTanks[0].AS_ARRAY, ZL_IS))
+                                {
                                     mEnergy += UT.Code.units(tRecipe.getAbsoluteTotalPower(), 10000, mEfficiency, F);
-                                    if (tRecipe.mFluidOutputs.length > 0) mTanks[1].fill(tRecipe.mFluidOutputs[0]);
-                                    if (mTanks[0].isEmpty()) break;
+                                    if (tRecipe.mFluidOutputs.length > 0)
+                                        mTanks[1].fill(tRecipe.mFluidOutputs[0]);
+                                    if (mTanks[0].isEmpty())
+                                        break;
                                 }
                             } else {
                                 // set remaining Fluid to null, in case the Fuel Type needs to be swapped out. But only
                                 // if it was inactive for 64 ticks.
-                                if (mActivity.mData == 0) mTanks[0].setEmpty();
+                                if (mActivity.mData == 0)
+                                    mTanks[0].setEmpty();
                             }
                         }
                     } else {
