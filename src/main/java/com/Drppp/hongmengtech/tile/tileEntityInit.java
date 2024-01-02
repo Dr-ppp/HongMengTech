@@ -2,9 +2,13 @@ package com.Drppp.hongmengtech.tile;
 
 import static gregapi.data.CS.*;
 
+import com.Drppp.hongmengtech.tile.multiblocks.MutiTileEntityLargeBuzzsaw;
 import com.Drppp.hongmengtech.tile.multiblocks.MutiTileEntityLargeRoastingOven;
 import gregapi.data.*;
+import gregapi.item.prefixitem.PrefixItem;
 import gregapi.tileentity.multiblocks.MultiTileEntityMultiBlockPart;
+import gregapi.util.ST;
+import gregtech.tileentity.multiblocks.MultiTileEntityMixer;
 import gregtech.tileentity.multiblocks.MultiTileEntityOven;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -60,6 +64,9 @@ public class tileEntityInit {
         //大型焙烧炉
         aMat = MT.Invar;
         aRegistry.add("Large Roasting Oven", "Multiblock Machines", 18111, 17101, MutiTileEntityLargeRoastingOven.class, aMat.mToolQuality, 16, aMachine , UT.NBT.make(NBT_MATERIAL, aMat, NBT_HARDNESS,   6.0F, NBT_RESISTANCE,   6.0F, NBT_TEXTURE, "largeroastingoven", NBT_INPUT,  512, NBT_INPUT_MIN,  512, NBT_INPUT_MAX,4096, NBT_EFFICIENCY,5000, NBT_ENERGY_ACCEPTED, TD.Energy.EU, NBT_RECIPEMAP, RM.Roasting, NBT_INV_SIDE_AUTO_OUT, SIDE_BOTTOM, NBT_TANK_SIDE_AUTO_OUT, SIDE_BOTTOM, NBT_CHEAP_OVERCLOCKING, T, NBT_PARALLEL,  64, NBT_PARALLEL_DURATION, T ), "PMP", "PwP", "RPC", 'M', aRegistry.getItem(18007), 'R', IL.Processor_Crystal_Ruby, 'C', OD_CIRCUITS[6], 'P', OP.plateDense.dat(aMat));
+        //大型圆锯
+        aMat = MT.StainlessSteel;
+        aRegistry.add("Large Batch Buzzsaw", "Multiblock Machines", 18112, 17101, MutiTileEntityLargeBuzzsaw.class, aMat.mToolQuality, 16, aMachine   , UT.NBT.make(NBT_MATERIAL, aMat, NBT_HARDNESS,   6.0F, NBT_RESISTANCE,   6.0F, NBT_TEXTURE, "largebuzzsaw", NBT_INPUT,  512, NBT_INPUT_MIN,  512, NBT_INPUT_MAX,4096 , NBT_ENERGY_ACCEPTED, TD.Energy.RU, NBT_RECIPEMAP, RM.Cutter, NBT_INV_SIDE_AUTO_OUT, SIDE_BOTTOM, NBT_TANK_SIDE_AUTO_OUT, SIDE_BOTTOM, NBT_CHEAP_OVERCLOCKING, T, NBT_PARALLEL, 64, NBT_PARALLEL_DURATION, T ), "PSP", "PSP", "RMC", 'M', aRegistry.getItem(20063), 'R', IL.Processor_Crystal_Ruby, 'C', OD_CIRCUITS[6], 'P', OP.plateDense.dat(aMat), 'S', OP.stickLong.dat(aMat));
 
     }
 }

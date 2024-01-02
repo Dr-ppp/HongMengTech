@@ -12,7 +12,10 @@ gt.tooltip.multiblock.roastingoven.2=第二层是 3x3 中空的8块大型镍铬�
 gt.tooltip.multiblock.roastingoven.3=第三层是 3x3 的殷钢壁板
 gt.tooltip.multiblock.roastingoven.4=主方块放在侧面底层的中心, 正面朝外
 gt.tooltip.multiblock.roastingoven.5=线圈不接收任何输入输出
-
+gt.tooltip.multiblock.largebuzzsaw.1=3x3x2 不锈钢壁板
+gt.tooltip.multiblock.largebuzzsaw.2=主方块放在侧面底层的中心, 正面朝外
+gt.tooltip.multiblock.largebuzzsaw.3=底层接收输入, 顶层和主方块输出
 gt.multitileentity.17200=艾德曼合金大型热交换器
 gt.multitileentity.18109=大型蓄电器组件
 gt.multitileentity.18111=大型电力焙烧炉
+gt.multitileentity.18112=大型圆锯
